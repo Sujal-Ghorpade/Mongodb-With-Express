@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h3>Edit your chat <%=chat._id%></h3>
+  <p>This msg is sent from <b><%=chat.from%></b> to <b><%=chat.to%></b></p><br><br>
+
+  <!-- Below we want put request so we need to over-ride the post request  -->
+  <form action="/chats/<%=chat._id%>?_method=PUT" method="post">
+    <textarea name="msg" rows="10" cols="30"><%=chat.msg%></textarea>
+    <button>Submit</button>
+  </form>
+
+</body>
+</html>
